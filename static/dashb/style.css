@@ -1,0 +1,84 @@
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#container {
+    margin: 20px;
+    width: 90%;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+#page_header {
+    font-size: 150%;
+    font-weight: 400;
+}
+
+#logout {
+    float: right;
+    text-decoration: underline;
+
+}
+
+#appgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(3, 120px);
+    grid-gap: 15px;
+    /*place-content: space-between;*/
+}
+
+.gridpos {
+}
+
+.dragdrop {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.appbox {
+    height: 100%;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.emptybox {
+    background-color: #e8e8e8;
+}
+
+.appname {
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+
+input[type="submit"], #editbutton button {
+    margin: 30px 60px;
+    font-size: 125%;
+    border-radius: 10px;
+    background-color: lightyellow;
+}
+
+#appselect {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.appdesc {
+    color: black;
+}
+
+
+

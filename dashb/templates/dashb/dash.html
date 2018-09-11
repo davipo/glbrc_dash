@@ -1,0 +1,44 @@
+{% extends 'dashb/base.html' %}
+
+{% block content %}
+            <div id="appgrid">
+            {% for app in grid_apps %}
+                {% if app %}
+                <div class="gridpos" id="gridpos{{forloop.counter0}}">
+                    <div class="dragdrop"
+                        ondragstart="drag(event)"
+                        ondragover="allowDrop(event)"
+                        ondrop="drop(event)"
+                        style="background-color: {{app.lighter_color}}">
+                        <a href="{{app.link}}">
+                            <div class="appbox">
+                                <h2 class="appname"
+                                    style="color: {{app.darker_color}}"
+                                    >{{app.name}}</h2>
+                                <p class="appdesc">{{app.description}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="gridpos" id="gridpos{{forloop.counter0}}">
+                    <div class="dragdrop emptybox"
+                        ondragstart="drag(event)"
+                        ondragover="allowDrop(event)"
+                        ondrop="drop(event)">
+                        <a>
+                            <div class="appbox">
+                                <h2 class="appname"></h2>
+                                <p class="appdesc"></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <p id="editbutton">
+                <button onclick="showAppselect()">Edit grid</button>
+            </p>
+{% include 'dashb/appselect.html' %}
+{% endblock content %}

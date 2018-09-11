@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}GLBRC Dashboard{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" 
+        href="{% static 'dashb/style.css' %}" />
+    <script 
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="{% static 'dashb/appgrid.js' %}"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <span id="page_header">GLBRC Dashboard</span>
+            <a id="logout" href="/logout/?next=/">
+                Log out {{request.user.username}}
+            </a>
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
